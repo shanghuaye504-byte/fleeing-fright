@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ftkh26e2afwd"]
+
+[ext_resource type="PackedScene" uid="uid://levucdflyfka" path="res://assets/models/WorldBlocks/block_shape_base.tscn" id="1_klrhs"]
+[ext_resource type="Texture2D" uid="uid://d1q2i7wk8wgej" path="res://assets/models/Essential_Isometric_3D_Block_Pack_Devilsworkshop_v2.0/Assets/Textures/lava01.png" id="2_705hv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4k42"]
+albedo_texture = ExtResource("2_705hv")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klrhs"]
+
+[node name="BlockShapeBase" instance=ExtResource("1_klrhs")]
+
+[node name="ground" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_d4k42")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+constant_linear_velocity = Vector3(1, 1, 1)
+constant_angular_velocity = Vector3(1.5707964, 1.5707964, 1.5707964)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_klrhs")

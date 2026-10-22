@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://levucdflyfka"]
+
+[ext_resource type="PackedScene" uid="uid://q6hcuscindnp" path="res://assets/models/Essential_Isometric_3D_Block_Pack_Devilsworkshop_v2.0/Assets/FBX/ground.fbx" id="1_k4ikr"]
+
+[node name="BlockShapeBase" instance=ExtResource("1_k4ikr")]

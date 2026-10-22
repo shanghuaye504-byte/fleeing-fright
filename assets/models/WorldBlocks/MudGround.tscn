@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjkxre3svpnga"]
+
+[ext_resource type="PackedScene" uid="uid://levucdflyfka" path="res://assets/models/WorldBlocks/block_shape_base.tscn" id="1_5s35l"]
+[ext_resource type="Texture2D" uid="uid://cy0wikk8jx1pe" path="res://assets/models/Essential_Isometric_3D_Block_Pack_Devilsworkshop_v2.0/Assets/Textures/groundMud.png" id="2_h8mob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ec0ij"]
+albedo_texture = ExtResource("2_h8mob")
+
+[node name="BlockShapeBase" instance=ExtResource("1_5s35l")]
+
+[node name="ground" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_ec0ij")

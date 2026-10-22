@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx1c7staslyq1"]
+
+[ext_resource type="PackedScene" uid="uid://cpterd6m1wbtg" path="res://assets/models/player/character1.tscn" id="1_h0hot"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8tfhr"]
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8tfhr"]
+
+[node name="LevelTest" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_8tfhr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, -0.09028901, 0)
+shape = SubResource("BoxShape3D_8tfhr")
+
+[node name="Character1" parent="." instance=ExtResource("1_h0hot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.662372, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8354239, 0.54960626, 0, -0.54960626, 0.8354239, 0, 3.7975814, 6.7869916)

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wyfxu87ju15m"
+path="res://.godot/imported/treeSet_pine1.obj-8af3b4c435ac4288cec896109c26215c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/treeSet_pine1.obj-8af3b4c435ac4288cec896109c26215c.mesh"]
+
+source_file="res://assets/models/treeSet_pine_demo/treeSet_pine1.obj"
+dest_files=["res://.godot/imported/treeSet_pine1.obj-8af3b4c435ac4288cec896109c26215c.mesh", "res://.godot/imported/treeSet_pine1.obj-8af3b4c435ac4288cec896109c26215c.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

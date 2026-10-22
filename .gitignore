@@ -1,0 +1,12 @@
+# Godot-generated data
+.godot/
+/android/
+
+# Local exports and OS metadata
+build/
+dist/
+*.pck
+.DS_Store
+desktop.ini
+.env
+.env.*

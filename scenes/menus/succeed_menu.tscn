@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://do7v3u5jak8lb"]
+
+[ext_resource type="Script" uid="uid://chlpq16dycodq" path="res://succeed_menu.gd" id="1_3kyco"]
+[ext_resource type="FontFile" uid="uid://cadl34d0h5skv" path="res://assets/fonts/d-puntillas-E-Tiptoes-squid.ttf" id="2_ayfet"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu0v6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40roq"]
+
+[node name="succeed_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3kyco")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -34.0
+offset_top = -26.0
+offset_right = 1209.0
+offset_bottom = 697.0
+color = Color(0.77184814, 0.55731606, 0.44630885, 1)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 103.0
+offset_right = 1091.0
+offset_bottom = 254.0
+theme_override_colors/font_color = Color(0.09869999, 0.43287003, 0.47, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_tu0v6")
+text = "Succeed!!!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 341.0
+offset_right = 867.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0.8568853, 0.91235983, 0.5920421, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.40850002, 0.40850002, 1)
+theme_override_fonts/font = ExtResource("2_ayfet")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_40roq")
+text = "GO BACK TO MAIN MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,667 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdipbmmyruqkx"]
+
+[ext_resource type="PackedScene" uid="uid://cabyka04v46iv" path="res://assets/models/WorldBlocks/GrassGround.tscn" id="1_s2q83"]
+[ext_resource type="PackedScene" uid="uid://cpterd6m1wbtg" path="res://assets/models/player/character1.tscn" id="2_kiuiw"]
+[ext_resource type="PackedScene" uid="uid://bjkxre3svpnga" path="res://assets/models/WorldBlocks/MudGround.tscn" id="2_stnnj"]
+[ext_resource type="PackedScene" uid="uid://diibqjtfrdbyn" path="res://assets/models/WorldBlocks/BrownWall.tscn" id="3_gckav"]
+[ext_resource type="PackedScene" uid="uid://c161xyw6tmost" path="res://scenes/environments/world_environment_basic.tscn" id="6_0vljy"]
+[ext_resource type="PackedScene" uid="uid://ch0b72xqdc7s4" path="res://scenes/enemies/ghost.tscn" id="7_78yd5"]
+[ext_resource type="PackedScene" uid="uid://nlaicg3ptivi" path="res://scenes/collectable/StarCoin.tscn" id="7_lx3d7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gckav"]
+size = Vector3(13, 1, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vljy"]
+size = Vector3(1, 2, 11)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78yd5"]
+size = Vector3(13, 2, 1)
+
+[node name="Level0" type="Node3D"]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="BlockShapeBase" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+
+[node name="BlockShapeBase21" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="BlockShapeBase31" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="BlockShapeBase32" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -1)
+
+[node name="BlockShapeBase33" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="BlockShapeBase34" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="BlockShapeBase35" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="BlockShapeBase22" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -2)
+
+[node name="BlockShapeBase23" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="BlockShapeBase24" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="BlockShapeBase25" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="BlockShapeBase26" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+
+[node name="BlockShapeBase36" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3)
+
+[node name="BlockShapeBase37" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+
+[node name="BlockShapeBase38" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
+
+[node name="BlockShapeBase39" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="BlockShapeBase40" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+
+[node name="BlockShapeBase41" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+
+[node name="BlockShapeBase42" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3)
+
+[node name="BlockShapeBase57" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+
+[node name="BlockShapeBase58" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="BlockShapeBase59" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="BlockShapeBase60" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="BlockShapeBase61" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+
+[node name="BlockShapeBase62" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="BlockShapeBase63" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(0.99988633, -0.015079073, 0, 0.015079073, 0.99988633, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="BlockShapeBase64" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3)
+
+[node name="BlockShapeBase65" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 2)
+
+[node name="BlockShapeBase66" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 1)
+
+[node name="BlockShapeBase67" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="BlockShapeBase68" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
+
+[node name="BlockShapeBase69" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -2)
+
+[node name="BlockShapeBase70" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -3)
+
+[node name="BlockShapeBase71" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -4)
+
+[node name="BlockShapeBase72" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="BlockShapeBase73" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -4)
+
+[node name="BlockShapeBase74" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="BlockShapeBase75" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
+
+[node name="BlockShapeBase76" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="BlockShapeBase77" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
+
+[node name="BlockShapeBase78" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="BlockShapeBase79" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -4)
+
+[node name="BlockShapeBase80" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="BlockShapeBase81" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4)
+
+[node name="BlockShapeBase82" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+
+[node name="BlockShapeBase83" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -2)
+
+[node name="BlockShapeBase84" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -1)
+
+[node name="BlockShapeBase85" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="BlockShapeBase86" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1)
+
+[node name="BlockShapeBase87" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+
+[node name="BlockShapeBase88" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+
+[node name="BlockShapeBase89" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
+
+[node name="BlockShapeBase90" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="BlockShapeBase91" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4)
+
+[node name="BlockShapeBase92" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="BlockShapeBase93" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+
+[node name="BlockShapeBase94" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="BlockShapeBase95" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="BlockShapeBase96" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="BlockShapeBase97" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+
+[node name="BlockShapeBase98" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="BlockShapeBase99" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+
+[node name="BlockShapeBase27" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -1)
+
+[node name="BlockShapeBase28" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="BlockShapeBase29" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1)
+
+[node name="BlockShapeBase30" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2)
+
+[node name="BlockShapeBase43" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3)
+
+[node name="BlockShapeBase50" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3)
+
+[node name="BlockShapeBase51" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="BlockShapeBase52" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1)
+
+[node name="BlockShapeBase53" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="BlockShapeBase54" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="BlockShapeBase55" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="BlockShapeBase56" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3)
+
+[node name="BlockShapeBase44" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+
+[node name="BlockShapeBase45" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="BlockShapeBase46" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="BlockShapeBase47" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+
+[node name="BlockShapeBase48" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+
+[node name="BlockShapeBase49" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="BlockShapeBase20" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="BlockShapeBase19" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+
+[node name="BlockShapeBase18" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="BlockShapeBase17" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 1)
+
+[node name="BlockShapeBase2" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="BlockShapeBase3" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="BlockShapeBase4" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="BlockShapeBase5" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="BlockShapeBase6" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="BlockShapeBase7" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="BlockShapeBase8" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="BlockShapeBase9" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="BlockShapeBase10" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
+
+[node name="BlockShapeBase11" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+
+[node name="BlockShapeBase12" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="BlockShapeBase13" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(0.999982, 0, -0.0060038967, 0, 1, 0, 0.0060038967, 0, 0.999982, 0, 0, 1)
+
+[node name="BlockShapeBase14" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="BlockShapeBase15" parent="world" instance=ExtResource("1_s2q83")]
+
+[node name="BlockShapeBase16" parent="world" instance=ExtResource("1_s2q83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)
+
+[node name="BlockShapeBase100" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="BlockShapeBase101" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="BlockShapeBase102" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5)
+
+[node name="BlockShapeBase103" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+
+[node name="BlockShapeBase104" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="BlockShapeBase105" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="BlockShapeBase106" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5)
+
+[node name="BlockShapeBase107" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="BlockShapeBase108" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3)
+
+[node name="BlockShapeBase109" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+
+[node name="BlockShapeBase110" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1)
+
+[node name="BlockShapeBase111" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="BlockShapeBase112" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -1)
+
+[node name="BlockShapeBase113" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+
+[node name="BlockShapeBase114" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3)
+
+[node name="BlockShapeBase115" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4)
+
+[node name="BlockShapeBase116" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -5)
+
+[node name="BlockShapeBase117" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="BlockShapeBase118" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="BlockShapeBase119" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -5)
+
+[node name="BlockShapeBase120" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5)
+
+[node name="BlockShapeBase121" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -5)
+
+[node name="BlockShapeBase122" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -5)
+
+[node name="BlockShapeBase123" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="BlockShapeBase124" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -5)
+
+[node name="BlockShapeBase125" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -5)
+
+[node name="BlockShapeBase126" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
+
+[node name="BlockShapeBase127" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+
+[node name="BlockShapeBase128" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="BlockShapeBase129" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -5)
+
+[node name="BlockShapeBase130" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4)
+
+[node name="BlockShapeBase131" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
+
+[node name="BlockShapeBase132" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+
+[node name="BlockShapeBase133" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
+
+[node name="BlockShapeBase134" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="BlockShapeBase135" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1)
+
+[node name="BlockShapeBase136" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
+
+[node name="BlockShapeBase137" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
+
+[node name="BlockShapeBase138" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
+
+[node name="BlockShapeBase139" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 5)
+
+[node name="BlockShapeBase140" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="BlockShapeBase141" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 5)
+
+[node name="BlockShapeBase142" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 5)
+
+[node name="BlockShapeBase143" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+
+[node name="BlockShapeBase144" parent="world" instance=ExtResource("2_stnnj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5)
+
+[node name="BlockShapeBase145" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="BlockShapeBase146" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 5)
+
+[node name="BlockShapeBase147" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 5)
+
+[node name="BlockShapeBase148" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 5)
+
+[node name="BlockShapeBase149" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 5)
+
+[node name="BlockShapeBase150" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 5)
+
+[node name="BlockShapeBase151" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 5)
+
+[node name="BlockShapeBase152" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 4)
+
+[node name="BlockShapeBase153" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 3)
+
+[node name="BlockShapeBase154" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 2)
+
+[node name="BlockShapeBase155" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 1)
+
+[node name="BlockShapeBase156" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 0)
+
+[node name="BlockShapeBase157" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -1)
+
+[node name="BlockShapeBase158" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -2)
+
+[node name="BlockShapeBase159" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -3)
+
+[node name="BlockShapeBase160" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -4)
+
+[node name="BlockShapeBase161" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -5)
+
+[node name="BlockShapeBase162" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -5)
+
+[node name="BlockShapeBase163" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -5)
+
+[node name="BlockShapeBase164" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -5)
+
+[node name="BlockShapeBase165" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -5)
+
+[node name="BlockShapeBase166" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5)
+
+[node name="BlockShapeBase167" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+
+[node name="BlockShapeBase168" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -5)
+
+[node name="BlockShapeBase169" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
+
+[node name="BlockShapeBase170" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -5)
+
+[node name="BlockShapeBase171" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, -5)
+
+[node name="BlockShapeBase172" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -5)
+
+[node name="BlockShapeBase173" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -5)
+
+[node name="BlockShapeBase174" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -4)
+
+[node name="BlockShapeBase175" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -3)
+
+[node name="BlockShapeBase176" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -2)
+
+[node name="BlockShapeBase177" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -1)
+
+[node name="BlockShapeBase178" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 0)
+
+[node name="BlockShapeBase179" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 1)
+
+[node name="BlockShapeBase180" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 2)
+
+[node name="BlockShapeBase181" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 3)
+
+[node name="BlockShapeBase182" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 4)
+
+[node name="BlockShapeBase183" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 5)
+
+[node name="BlockShapeBase184" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 5)
+
+[node name="BlockShapeBase185" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 5)
+
+[node name="BlockShapeBase186" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 5)
+
+[node name="BlockShapeBase187" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 5)
+
+[node name="BlockShapeBase188" parent="world" instance=ExtResource("3_gckav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="world"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D"]
+shape = SubResource("BoxShape3D_gckav")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="world"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, 0)
+shape = SubResource("BoxShape3D_0vljy")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="world"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, 0)
+shape = SubResource("BoxShape3D_0vljy")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="world"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5)
+shape = SubResource("BoxShape3D_78yd5")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="world"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="world/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5)
+shape = SubResource("BoxShape3D_78yd5")
+
+[node name="Character1" parent="." instance=ExtResource("2_kiuiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9734979, 1.086525, 2.0040438)
+wall_min_slide_angle = 0.0
+floor_max_angle = 0.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.81618804, 0.5777864, 0, -0.5777864, 0.81618804, 0, 5.5701895, 7.3288426)
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("6_0vljy")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.8586291, -0.19894472, 0.47241634, -0.51156867, -0.27420807, 0.81431425, -0.03246314, -0.9408673, -0.33721685, 3.9377184, 5.348857, -1.4228513)
+shadow_enabled = true
+
+[node name="coins" type="Node3D" parent="."]
+
+[node name="StarCoin" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0847218, 1, 0.06288147)
+
+[node name="StarCoin2" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7792974, 1, 2.983326)
+
+[node name="StarCoin3" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8148475, 1, -2.6982145)
+
+[node name="StarCoin4" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.898109, 1, -2.6982145)
+
+[node name="StarCoin5" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7650604, 1, -0.7294589)
+
+[node name="StarCoin6" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0014882, 1, 3.142858)
+
+[node name="StarCoin7" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.732765, 1, 1.9902836)
+
+[node name="StarCoin8" parent="coins" instance=ExtResource("7_lx3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.732765, 1, -0.8367864)
+
+[node name="enemies" type="Node3D" parent="."]
+
+[node name="ghost" parent="enemies" instance=ExtResource("7_78yd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.719198, 1, 1.8044765)
+
+[node name="ghost2" parent="enemies" instance=ExtResource("7_78yd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9665403, 1, -2.891682)

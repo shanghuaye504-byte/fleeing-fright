@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bi1218je1wsl8"]
+
+[node name="MusicPlayer" type="Node3D"]

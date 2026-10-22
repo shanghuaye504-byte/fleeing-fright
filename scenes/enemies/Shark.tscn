@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ikk2ebdi060"]
+
+[ext_resource type="Script" uid="uid://belqqeioke1kk" path="res://scenes/enemies/shark.gd" id="1_anre8"]
+[ext_resource type="PackedScene" uid="uid://ftw2ftf50ku" path="res://scenes/enemies/shark_modeling.tscn" id="1_e056y"]
+[ext_resource type="AudioStream" uid="uid://bnerp4olck3iu" path="res://assets/audio/sfx/kenney_music-jingles/Audio/8-Bit jingles/jingles_NES04.ogg" id="3_rnebq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_anre8"]
+height = 4.065
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rnebq"]
+radius = 0.524
+height = 4.381
+
+[node name="Shark" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 4
+script = ExtResource("1_anre8")
+
+[node name="shark_modeling" parent="." instance=ExtResource("1_e056y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_anre8")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_rnebq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rnebq")
+volume_db = -5.248
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

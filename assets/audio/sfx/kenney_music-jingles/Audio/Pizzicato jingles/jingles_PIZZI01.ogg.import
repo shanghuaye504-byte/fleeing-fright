@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bj8pxnlclk8bs"
+path="res://.godot/imported/jingles_PIZZI01.ogg-5884233821e5b91d7f02db098e1d93bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/kenney_music-jingles/Audio/Pizzicato jingles/jingles_PIZZI01.ogg"
+dest_files=["res://.godot/imported/jingles_PIZZI01.ogg-5884233821e5b91d7f02db098e1d93bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

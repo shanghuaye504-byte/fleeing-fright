@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://v685qlasq04"]
+
+[ext_resource type="PackedScene" uid="uid://b6bvqsq5loti3" path="res://assets/models/GhostCharacter_Free/Fbx/Ghost_animation.fbx" id="1_ubnfb"]
+[ext_resource type="Texture2D" uid="uid://bywk0k3t4dffq" path="res://assets/models/GhostCharacter_Free/Textures/texture_ghost_occlusion.png" id="2_ampn6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrbf8"]
+transparency = 1
+albedo_texture = ExtResource("2_ampn6")
+
+[node name="Ghost_animation" instance=ExtResource("1_ubnfb")]
+
+[node name="GhostArmature" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, -0.45, 0.15)
+
+[node name="Skeleton3D" parent="GhostArmature" index="0"]
+bones/0/rotation = Quaternion(0.86324805, 0, 0, 0.50478)
+bones/1/rotation = Quaternion(-0.10371673, 0, 0, 0.9946069)
+bones/1/scale = Vector3(1, 1.0000001, 1)
+bones/2/rotation = Quaternion(-0.05867883, 0, 0, 0.99827695)
+bones/3/rotation = Quaternion(0.052040704, 0, 0, 0.998645)
+bones/4/rotation = Quaternion(-0.06147728, 0, 0, 0.99810857)
+bones/6/rotation = Quaternion(0.10235901, 0.6996588, 0.6996591, -0.10235936)
+bones/8/rotation = Quaternion(0.40490633, 0.6360157, 0.51624984, -0.40622795)
+bones/9/rotation = Quaternion(0.17811817, -0.08302236, -0.3725912, 0.90694934)
+bones/9/scale = Vector3(0.9999994, 0.99999994, 1.0000002)
+bones/10/rotation = Quaternion(0.33277962, 0.0029111048, 0.029185196, 0.9425485)
+bones/10/scale = Vector3(1.0000001, 1.0000001, 1)
+bones/11/rotation = Quaternion(-0.18596295, -0.28698802, 0.01383938, 0.9396086)
+bones/11/scale = Vector3(0.9999998, 0.9999999, 1.0000001)
+bones/12/rotation = Quaternion(-0.4049063, 0.6360157, 0.51624984, 0.40622795)
+bones/13/rotation = Quaternion(0.1781182, 0.08302225, 0.37259123, 0.90694934)
+bones/13/scale = Vector3(0.99999964, 0.99999994, 1.0000002)
+bones/14/rotation = Quaternion(0.33277956, -0.0029111253, -0.029185236, 0.94254845)
+bones/14/scale = Vector3(1.0000001, 0.9999998, 1.0000004)
+bones/15/rotation = Quaternion(-0.1859629, 0.28698814, -0.013839368, 0.9396085)
+bones/15/scale = Vector3(0.9999999, 1, 1)
+bones/16/rotation = Quaternion(0.988537, 0, 0, -0.15097855)
+bones/17/rotation = Quaternion(0.12077751, 0, 0, 0.99267966)
+bones/18/rotation = Quaternion(0.12832357, 0, 0, 0.99173236)
+bones/19/rotation = Quaternion(0.30590767, 0, 0, 0.9520613)
+
+[node name="Ghost" parent="GhostArmature/Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_nrbf8")

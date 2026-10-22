@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://ftw2ftf50ku"]
+
+[ext_resource type="PackedScene" uid="uid://to3lolro6de5" path="res://assets/models/3D shark - Character Pack/Modeling/shark_modeling.FBX" id="1_keyaf"]
+
+[node name="shark_modeling" instance=ExtResource("1_keyaf")]
+
+[node name="Circle010" parent="." index="0"]
+transform = Transform3D(90, 0, 0, 0, -3.934025e-06, 90, 0, -90, -3.934025e-06, 0.00020228743, -0.014539276, -0.0048461934)
+
+[node name="Dummy001" parent="Circle010" index="0"]
+transform = Transform3D(-1.0973065e-07, -1.1997317e-07, -0.73639, -0.73639, -3.218863e-08, 1.09730664e-07, -3.2188648e-08, 0.73639, -1.1997317e-07, -0.00014896253, -0.026497023, 0.011266979)
+
+[node name="Skeleton3D" parent="Circle010/Dummy001" index="1"]
+bones/0/rotation = Quaternion(6.815792e-08, 5.0741715e-08, 0.9999933, -0.0036634381)
+bones/1/rotation = Quaternion(-1.3670727e-07, -2.3145859e-09, 0.00057588384, 0.9999998)
+bones/2/rotation = Quaternion(-7.5351977e-07, -3.4271046e-08, 0.00028066806, 1)
+bones/3/rotation = Quaternion(-9.01569e-07, -3.4087833e-09, -6.798654e-08, 1)
+bones/4/rotation = Quaternion(-1.4163464e-06, -7.7612555e-08, 0.0031910841, 0.999995)
+bones/5/rotation = Quaternion(-2.368312e-06, -3.0946756e-09, -0.0019975395, 0.9999981)
+bones/6/rotation = Quaternion(-4.6966179e-07, 9.088453e-09, -0.0018036913, 0.9999984)
+bones/7/rotation = Quaternion(5.8931796e-06, 1.673169e-07, -0.00021973146, 1)
+bones/8/rotation = Quaternion(-1.4757095e-08, 5.488431e-08, 0.0003255415, 0.99999994)
+bones/9/rotation = Quaternion(9.460548e-08, -2.3173013e-07, 0.0037599201, 0.99999297)
+bones/24/rotation = Quaternion(-0.019431883, 0.18334998, -0.09396918, 0.9783532)
+bones/29/rotation = Quaternion(0.01943185, 0.18334971, 0.09396912, 0.97835326)
+
+[node name="Sphere001" parent="Circle010/Dummy001/Skeleton3D" index="0"]
+transform = Transform3D(-0.9999732, 0.0073268274, 1.3594313e-07, -0.0073268274, -0.9999732, 1.01982124e-07, 1.3668671e-07, 1.0098337e-07, 1, 0.00072743796, 3.358841e-05, 1.6689303e-09)
+bone_idx = 0
+
+[node name="Sphere002" parent="Circle010/Dummy001/Skeleton3D" index="1"]
+transform = Transform3D(-0.9999732, 0.0073268274, 1.3594313e-07, -0.0073268274, -0.9999732, 1.01982124e-07, 1.3668671e-07, 1.0098337e-07, 1, 0.00072743796, 3.358841e-05, 1.6689303e-09)
+bone_idx = 0

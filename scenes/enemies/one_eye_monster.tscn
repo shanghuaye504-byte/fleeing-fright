@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://jqvbannahyl6"]
+
+[ext_resource type="Script" uid="uid://bpyl2bh0w5bh4" path="res://scenes/enemies/one_eye_monster.gd" id="1_ktnm7"]
+[ext_resource type="PackedScene" uid="uid://bmd5urti5o6xb" path="res://scenes/enemies/walk_slime_anim.tscn" id="1_or42g"]
+[ext_resource type="AudioStream" uid="uid://by1fasm7h2s4q" path="res://assets/audio/sfx/kenney_sci-fi-sounds/Audio/computerNoise_003.ogg" id="3_ae36v"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ktnm7"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_or42g"]
+height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ktnm7"]
+radius = 1.0
+
+[node name="OneEyeMonster" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 4
+script = ExtResource("1_ktnm7")
+
+[node name="Walk_Slime_Anim" parent="." instance=ExtResource("1_or42g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_ktnm7")
+
+[node name="PlayerCatcher" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCatcher"]
+shape = SubResource("CylinderShape3D_or42g")
+
+[node name="SeperationArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SeperationArea"]
+shape = SubResource("SphereShape3D_ktnm7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ae36v")
+
+[connection signal="body_entered" from="PlayerCatcher" to="." method="_on_player_catcher_body_entered"]

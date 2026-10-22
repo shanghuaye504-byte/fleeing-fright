@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsuhn3hngprwp"]
+
+[ext_resource type="PackedScene" uid="uid://levucdflyfka" path="res://assets/models/WorldBlocks/block_shape_base.tscn" id="1_0f5mh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo8bn"]
+transparency = 1
+albedo_color = Color(0.2175, 0.60899997, 0.87, 1)
+metallic = 0.1
+roughness = 0.0
+
+[node name="BlockShapeBase" instance=ExtResource("1_0f5mh")]
+
+[node name="ground" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_eo8bn")
+transparency = 0.37
+cast_shadow = 0
+gi_mode = 0

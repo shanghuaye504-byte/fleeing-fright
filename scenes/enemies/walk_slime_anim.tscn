@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmd5urti5o6xb"]
+
+[ext_resource type="PackedScene" uid="uid://dv8kiav6hfimt" path="res://assets/models/RPG Monster DUO PBR Polyart/Animations/Slime/Walk_Slime_Anim.fbx" id="1_l6nh8"]
+[ext_resource type="Texture2D" uid="uid://elmtbjdmnws2" path="res://assets/models/RPG Monster DUO PBR Polyart/Textures/Emission.png" id="2_be373"]
+[ext_resource type="Texture2D" uid="uid://cxh8sdbql1sjy" path="res://assets/models/RPG Monster DUO PBR Polyart/Textures/Metallic-Smoothness.png" id="3_pnxun"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0u7u"]
+albedo_color = Color(0.91, 0.32638666, 0.2366, 1)
+metallic = 1.0
+metallic_texture = ExtResource("3_pnxun")
+emission_enabled = true
+emission_texture = ExtResource("2_be373")
+
+[node name="Walk_Slime_Anim" groups=["enemy"] instance=ExtResource("1_l6nh8")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(-1.5037661e-32, 0.06317121, -0.008183929)
+bones/1/rotation = Quaternion(-5.7902643e-24, 2.7141146e-24, 0.2246773, 0.97443324)
+bones/2/position = Vector3(0.24985054, 0.012625657, 1.1879297e-16)
+bones/2/rotation = Quaternion(2.0679515e-24, -1.2407709e-24, 0.15302908, 0.9882217)
+bones/3/position = Vector3(0.25357038, -0.04359345, 1.750886e-16)
+bones/4/rotation = Quaternion(-0.53339976, 0.8458634, 1.1102232e-16, 2.775558e-16)
+bones/5/rotation = Quaternion(0.60916793, -0.3590467, 0.60916793, 0.35904664)
+bones/6/rotation = Quaternion(0.44996265, -0.5454665, 0.44996265, 0.54546636)
+bones/7/rotation = Quaternion(0.44996265, -0.5454665, 0.44996265, 0.54546636)
+
+[node name="Slime" parent="Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_o0u7u")
