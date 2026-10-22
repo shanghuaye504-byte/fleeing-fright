@@ -60,3 +60,11 @@
 - Final bonus movement walk: PASS. Final documentation links, internal index, and whitespace checks pass.
 - Release artifact: FleeingFright.pck, 44,644,780 bytes. SHA256SUMS.txt accompanies the download.
 - Public repository target: shanghuaye504-byte/fleeing-fright; first release tag v0.1.0.
+
+## 2026-10-23 — repository publication
+
+- Created the requested public GitHub repository: https://github.com/shanghuaye504-byte/fleeing-fright.
+- Pushed baseline and validated upgrade to main; local working tree was clean after push.
+- Kept all original assets, including a 51.14 MiB FBX; GitHub accepts it with a size recommendation warning.
+- Canonicalized the companion Unity folder metadata filename materials.meta with its asset directory.
+  This does not change Godot runtime resources or the already verified PCK.
