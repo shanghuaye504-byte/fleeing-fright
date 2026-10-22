@@ -1,9 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b07cxk5d537kt"]
+[gd_scene load_steps=2 format=3 uid="uid://b07cxk5d537kt"]
 
-[ext_resource type="Script" uid="uid://berr85uanb0eu" path="res://game_over_menu.gd" id="1_yytlj"]
-[ext_resource type="FontFile" uid="uid://cadl34d0h5skv" path="res://assets/fonts/d-puntillas-E-Tiptoes-squid.ttf" id="2_ufkiq"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2a6mq"]
+[ext_resource type="Script" path="res://game_over_menu.gd" id="1"]
 
 [node name="game_over_menu" type="Control"]
 layout_mode = 3
@@ -12,39 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yytlj")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -48.0
-offset_top = -31.0
-offset_right = 1196.0
-offset_bottom = 703.0
-color = Color(0.1288, 0.2063867, 0.23, 1)
-
-[node name="TextEdit" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 77.0
-offset_top = 122.0
-offset_right = 1161.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_2a6mq")
-text = "Game Over! 
-Perss key \"J\" to detect ghost in front of you!"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 288.0
-offset_top = 414.0
-offset_right = 863.0
-offset_bottom = 496.0
-theme_override_colors/font_color = Color(0.3456, 0.63232005, 0.96, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.65428007, 0.66, 0.31680003, 1)
-theme_override_fonts/font = ExtResource("2_ufkiq")
-theme_override_font_sizes/font_size = 48
-text = "GO BACK TO MAIN MENU"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+script = ExtResource("1")

@@ -10,14 +10,23 @@ config_version=5
 
 [application]
 
-config/name="3D"
-run/main_scene="uid://cdipbmmyruqkx"
+config/name="Fleeing Fright"
+config/version="0.1.0"
+run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://global.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 
 [global_group]
 

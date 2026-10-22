@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpgcdaqx4rnvb"
-path.s3tc="res://.godot/imported/texture_ghost.png-dbcbd39c5ee63493fe6a8ce75909ebe1.s3tc.ctex"
+uid="uid://bywk0k3t4dffq"
+path.s3tc="res://.godot/imported/texture_ghost_occlusion.png-e9f57523f2e479da27723408df10b7f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/GhostCharacter_Free/Textures/texture_ghost.png"
-dest_files=["res://.godot/imported/texture_ghost.png-dbcbd39c5ee63493fe6a8ce75909ebe1.s3tc.ctex"]
+source_file="res://assets/models/GhostCharacter_Free/textures/texture_ghost_occlusion.png"
+dest_files=["res://.godot/imported/texture_ghost_occlusion.png-e9f57523f2e479da27723408df10b7f7.s3tc.ctex"]
 
 [params]
 

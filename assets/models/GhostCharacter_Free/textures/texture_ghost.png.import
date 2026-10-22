@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://elmtbjdmnws2"
-path.s3tc="res://.godot/imported/Emission.png-c7eb48945567e9050f90a9cf1df8718c.s3tc.ctex"
+uid="uid://cpgcdaqx4rnvb"
+path.s3tc="res://.godot/imported/texture_ghost.png-b2aa26ab89dc2ec99fd35749f70a4050.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/RPG Monster DUO PBR Polyart/Textures/Emission.png"
-dest_files=["res://.godot/imported/Emission.png-c7eb48945567e9050f90a9cf1df8718c.s3tc.ctex"]
+source_file="res://assets/models/GhostCharacter_Free/textures/texture_ghost.png"
+dest_files=["res://.godot/imported/texture_ghost.png-b2aa26ab89dc2ec99fd35749f70a4050.s3tc.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://v685qlasq04"]
 
 [ext_resource type="PackedScene" uid="uid://b6bvqsq5loti3" path="res://assets/models/GhostCharacter_Free/Fbx/Ghost_animation.fbx" id="1_ubnfb"]
-[ext_resource type="Texture2D" uid="uid://bywk0k3t4dffq" path="res://assets/models/GhostCharacter_Free/Textures/texture_ghost_occlusion.png" id="2_ampn6"]
+[ext_resource type="Texture2D" uid="uid://bywk0k3t4dffq" path="res://assets/models/GhostCharacter_Free/textures/texture_ghost_occlusion.png" id="2_ampn6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrbf8"]
 transparency = 1

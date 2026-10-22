@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://banhhy0cklfrs"
-path="res://.godot/imported/texture_BlockGrass.png-f129a33bed3a28d165a4be56cc257d53.ctex"
+uid="uid://dwi5hahdbvjbv"
+path="res://.godot/imported/texture_BlockGrass_Normal.png-7595b379c0b5898d4205d0722ffe3800.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/models/GhostCharacter_Free/Textures/texture_BlockGrass.png"
-dest_files=["res://.godot/imported/texture_BlockGrass.png-f129a33bed3a28d165a4be56cc257d53.ctex"]
+source_file="res://assets/models/GhostCharacter_Free/textures/texture_BlockGrass_Normal.png"
+dest_files=["res://.godot/imported/texture_BlockGrass_Normal.png-7595b379c0b5898d4205d0722ffe3800.ctex"]
 
 [params]
 

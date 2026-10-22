@@ -1,75 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cry2dq101lfgr"]
+[gd_scene load_steps=2 format=3 uid="uid://cry2dq101lfgr"]
 
-[ext_resource type="FontFile" uid="uid://cadl34d0h5skv" path="res://assets/fonts/d-puntillas-E-Tiptoes-squid.ttf" id="1_3leng"]
-[ext_resource type="Script" uid="uid://cplod3oet7uy0" path="res://scenes/menus/level_menu.gd" id="1_6wyfp"]
+[ext_resource type="Script" path="res://scenes/menus/level_menu.gd" id="1"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3leng"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6wyfp"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3m67"]
-
-[node name="Level_menu" type="Control"]
+[node name="level_menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6wyfp")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -19.0
-offset_top = -27.0
-offset_right = 1195.0
-offset_bottom = 676.0
-color = Color(0.1882353, 0.13725491, 0.13725491, 1)
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 229.0
-offset_top = 147.00002
-offset_right = 429.0
-offset_bottom = 229.00002
-rotation = -0.2765731
-theme_override_colors/font_color = Color(0.7552556, 0.8255548, 0.5378122, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.20999998, 0.20999998, 1)
-theme_override_colors/font_hover_color = Color(0.225, 0.5287502, 0.9, 1)
-theme_override_fonts/font = ExtResource("1_3leng")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_3leng")
-text = "Level 0"
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 359.00003
-offset_top = 399.0
-offset_right = 559.0
-offset_bottom = 481.0
-rotation = 0.30171603
-theme_override_colors/font_color = Color(0.7089584, 0.5395, 0.83, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.39, 0.39, 1)
-theme_override_colors/font_hover_color = Color(0.22352941, 0.5294118, 0.9019608, 1)
-theme_override_fonts/font = ExtResource("1_3leng")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_6wyfp")
-text = "Level 2"
-
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 745.00006
-offset_top = 195.0
-offset_right = 945.00006
-offset_bottom = 277.0
-rotation = 0.43518093
-theme_override_colors/font_color = Color(0.4573347, 0.78343827, 0.6891138, 1)
-theme_override_colors/font_pressed_color = Color(1, 0.3, 0.3, 1)
-theme_override_colors/font_hover_color = Color(0.22352941, 0.5294118, 0.9019608, 1)
-theme_override_fonts/font = ExtResource("1_3leng")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = SubResource("StyleBoxTexture_o3m67")
-text = "Level 3"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+script = ExtResource("1")

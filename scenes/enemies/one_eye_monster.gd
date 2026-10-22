@@ -17,17 +17,15 @@ var player_node: Node3D = null
 func _ready():
 	snap_to_grid()
 	target_position = global_position
-	print("one eye monster spawned")
 	#print(raycast == null)
 	#print(ghost == null)
 	#print(body_mesh == null)
 	
 	animation = $Walk_Slime_Anim/AnimationPlayer
 	if animation == null:
-		print("播放失败")
+		return
 	if animation.get_animation_list().size() > 0:
 		var first_anim_name = animation.get_animation_list()[0]
-		print("第一个动画名称: ", first_anim_name)
 		
 		var animation_player = animation.get_animation(first_anim_name)
 		if animation_player:
@@ -54,16 +52,12 @@ func process_movement(delta):
 		is_moving = false
 		
 func process_decision():
-	
-	while not can_move_in_direction(move_direction):
+	if not can_move_in_direction(move_direction):
 		move_direction.x = -move_direction.x
-		print("inloop")
-		
+		if not can_move_in_direction(move_direction):
+			return
 	start_moving(move_direction)
-	
-		
 
-	
 func start_moving(dir: Vector3):
 	
 	target_position = global_position + (dir * GRID_SIZE)
@@ -96,7 +90,6 @@ func can_move_in_direction(dir: Vector3) -> bool:
 	return result.is_empty()
 	
 func snap_to_grid():
-	print(GRID_SIZE)
 	var x = round(global_position.x / GRID_SIZE) * GRID_SIZE
 	var z = round(global_position.z / GRID_SIZE) * GRID_SIZE
 	global_position = Vector3(x, global_position.y, z)
@@ -111,29 +104,15 @@ func stop_movement():
 	set_physics_process(false)
 
 
-#func _on_area_3d_body_entered(body: Node3D) -> void:
-#
-	#get_tree().change_scene_to_file("res://scenes/levels/Level_0.tscn")
 
 
 
 
 
 func _on_player_catcher_body_entered(body: Node3D) -> void:
-	Global.level1coins = 0
-	Global.level2coins = 0
-	Global.level3coins = 0
-	
-	if body.is_in_group("player"):
-		player_caught.emit()
-	
-	
-		stop_movement()
-		print("movement_stop")
-		
-		$AudioStreamPlayer.play()
-	# only 2 sceond
-		await get_tree().create_timer(3.0).timeout
-		$AudioStreamPlayer.stop()
-		
-		get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
+	if not body.is_in_group("player") or not Global.run_active:
+		return
+	player_caught.emit()
+	stop_movement()
+	$AudioStreamPlayer.play()
+	Global.finish_run(false)

@@ -23,10 +23,9 @@ func _ready():
 	target_position = global_position
 	animation = $shark_modeling/AnimationPlayer
 	if animation == null:
-		print("播放失败")
+		return
 	if animation.get_animation_list().size() > 0:
 		var first_anim_name = animation.get_animation_list()[0]
-		print("第一个动画名称: ", first_anim_name)
 		
 		var animation_player = animation.get_animation(first_anim_name)
 		if animation_player:
@@ -39,7 +38,6 @@ func _ready():
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player_node = players[0]
-		print("成功了！")
 		
 		
 func _physics_process(delta):
@@ -58,7 +56,8 @@ func process_movement(delta):
 		is_moving = false
 		
 func process_decision():
-	
+	if not is_instance_valid(player_node):
+		return
 	if abs(global_position.y - player_node.global_position.y) > 0.5:
 		move_randomly()
 	else:
@@ -131,13 +130,9 @@ func can_move_in_direction(dir: Vector3) -> bool:
 	var result = space_state.intersect_ray(query)
 	
 	# 调试信息
-	if not result.is_empty():
-		print("检测到障碍物: ", result.collider.name, " 层: ", result.collider.collision_layer)
-	
 	return result.is_empty()
 	
 func snap_to_grid():
-	print(GRID_SIZE)
 	var x = round(global_position.x / GRID_SIZE) * GRID_SIZE
 	var z = round(global_position.z / GRID_SIZE) * GRID_SIZE
 	global_position = Vector3(x, global_position.y, z)
@@ -152,28 +147,10 @@ func stop_movement():
 	set_physics_process(false)
 
 
-#func _on_area_3d_body_entered(body: Node3D) -> void:
-#
-	#get_tree().change_scene_to_file("res://scenes/levels/Level_0.tscn")
-
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	Global.level1coins = 0
-	Global.level2coins = 0
-	Global.level3coins = 0
-	
-	if body.is_in_group("player"):
-		player_caught.emit()
-	
-	
+	if not body.is_in_group("player") or not Global.run_active:
+		return
+	player_caught.emit()
 	stop_movement()
-	print("movement_stop")
-		
 	$AudioStreamPlayer.play()
-	
-	var timer = get_tree().create_timer(2)
-	await timer.timeout
-	
-	
-		
-	get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
+	Global.finish_run(false)

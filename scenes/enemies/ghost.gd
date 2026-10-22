@@ -6,14 +6,14 @@ signal player_caught
 @export var GRID_SIZE= 1.0
 var animation
 
-@onready var separation_area = $SeparationArea
+
 
 var is_moving: bool = false
 var target_position: Vector3
 var current_direction: Vector3 = Vector3.FORWARD
 var is_hidden: bool = true
 
-@onready var raycast = $RayCast3D
+
 @onready var ghost = $Ghost_animation
 @onready var body_mesh = ghost.find_child("Ghost")
 @onready var audio_players = [
@@ -32,7 +32,8 @@ func _ready():
 	#print(ghost == null)
 	#print(body_mesh == null)
 	
-	body_mesh.transparency = 0.9
+	body_mesh.transparency = 1.0
+	ghost.hide()
 	is_hidden = true
 	
 	var players = get_tree().get_nodes_in_group("player")
@@ -48,7 +49,6 @@ func _physics_process(delta):
 		
 func on_hit_by_bubble():
 	if is_hidden:
-		print("Ghost detected!")
 		
 		self_reveal()
 		#sfx or visual effect
@@ -56,19 +56,21 @@ func on_hit_by_bubble():
 		pass
 		
 func self_reveal():
+	if not is_hidden:
+		return
 	is_hidden = false
+	ghost.show()
 	
 	var tween = create_tween()
 	
 	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tween.tween_property(body_mesh, "transparency", 0.0, 2)
+	tween.tween_property(body_mesh, "transparency", 0.0, 0.45)
 	$AudioStreamPlayer5.play()
 	animation = $Ghost_animation/AnimationPlayer
 	if animation == null:
-		print("播放失败")
+		return
 	if animation.get_animation_list().size() > 0:
 		var first_anim_name = animation.get_animation_list()[0]
-		print("第一个动画名称: ", first_anim_name)
 		
 			
 			# player
@@ -83,6 +85,8 @@ func process_movement(delta):
 		is_moving = false
 		
 func process_decision():
+	if not is_instance_valid(player_node):
+		return
 	if is_hidden:
 		pass
 	elif abs(global_position.y - player_node.global_position.y) > 0.5:
@@ -157,13 +161,9 @@ func can_move_in_direction(dir: Vector3) -> bool:
 	var result = space_state.intersect_ray(query)
 	
 	# 调试信息
-	if not result.is_empty():
-		print("检测到障碍物: ", result.collider.name, " 层: ", result.collider.collision_layer)
-	
 	return result.is_empty()
 	
 func snap_to_grid():
-	print(GRID_SIZE)
 	var x = round(global_position.x / GRID_SIZE) * GRID_SIZE
 	var z = round(global_position.z / GRID_SIZE) * GRID_SIZE
 	global_position = Vector3(x, global_position.y, z)
@@ -178,54 +178,10 @@ func stop_movement():
 	set_physics_process(false)
 
 
-#func _on_area_3d_body_entered(body: Node3D) -> void:
-#
-	#get_tree().change_scene_to_file("res://scenes/levels/Level_0.tscn")
-
-
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	Global.level1coins = 0
-	Global.level2coins = 0
-	Global.level3coins = 0
-	
-	if body.is_in_group("player"):
-		player_caught.emit()
-	
-	if is_hidden == true:
-		
-		var tween = create_tween()
-	
-		tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-		tween.tween_property(body_mesh, "transparency", 0.0, 3.5)
-		tween.tween_callback(func(): 
-			get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
-		)	
-		audio_players[0].play()
-		await audio_players[0].finished
-		audio_players[1].play()
-		await audio_players[1].finished
-		audio_players[2].play()
-		await audio_players[2].finished
-		audio_players[3].play()
-		
-		
-		
-	
-		tween.tween_callback(func(): 
-			get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
-		)	
-	else:
-		stop_movement()
-		print("movement_stop")
-		
-		audio_players[0].play()
-		await audio_players[0].finished
-		audio_players[1].play()
-		await audio_players[1].finished
-		audio_players[2].play()
-		await audio_players[2].finished
-		audio_players[3].play()
-		await audio_players[3].finished
-		
-		
-		get_tree().change_scene_to_file("res://scenes/menus/game_over_menu.tscn")
+	if not body.is_in_group("player") or not Global.run_active:
+		return
+	player_caught.emit()
+	stop_movement()
+	$AudioStreamPlayer.play()
+	Global.finish_run(false)

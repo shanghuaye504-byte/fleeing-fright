@@ -9,7 +9,6 @@ func _ready() -> void:
 
 func spawn_enemies_per_height():
 	var coin_pos = get_tree().get_nodes_in_group("coins")
-	print(coin_pos)
 	#classify coins by different heights
 	var coins_by_height = {}
 	# get the positions of all the coins:
@@ -30,8 +29,8 @@ func spawn_enemies_per_height():
 		for i in range(num):
 			var spawn_pos = positions[i]
 			var ghost = ghost_scene.instantiate()
+			ghost.position = to_local(spawn_pos)
 			add_child(ghost)
-			ghost.global_position = spawn_pos
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

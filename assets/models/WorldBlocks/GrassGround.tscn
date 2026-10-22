@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cbamm1fpmtp4d" path="res://assets/models/Essential_Isometric_3D_Block_Pack_Devilsworkshop_v2.0/Assets/Textures/groundEarth.png" id="2_vooyy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brbh1"]
+albedo_color = Color(0.78, 0.86, 0.82, 1)
 albedo_texture = ExtResource("2_vooyy")
 
 [node name="BlockShapeBase" instance=ExtResource("1_6k8qu")]

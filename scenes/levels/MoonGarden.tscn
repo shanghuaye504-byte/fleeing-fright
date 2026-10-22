@@ -1,0 +1,1003 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/WorldBlocks/GrassGround.tscn" id="floor"]
+[ext_resource type="PackedScene" path="res://assets/models/WorldBlocks/BrownWall.tscn" id="wall"]
+[ext_resource type="PackedScene" path="res://assets/models/player/character1.tscn" id="player"]
+[ext_resource type="PackedScene" path="res://scenes/collectable/StarCoin.tscn" id="coin"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/ghost.tscn" id="ghost"]
+[ext_resource type="PackedScene" path="res://scenes/environments/world_environment_basic.tscn" id="env"]
+[ext_resource type="Script" path="res://presentation/effects/LevelAtmosphere.gd" id="atmo"]
+
+[sub_resource type="StandardMaterial3D" id="lamp_mat"]
+shading_mode = 0
+albedo_color = Color(0.5, 0.95, 0.82, 1)
+emission_enabled = true
+emission = Color(0.3, 0.9, 0.75, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="lamp_mesh"]
+radius = 0.12
+height = 0.24
+
+[sub_resource type="BoxShape3D" id="floor_collision"]
+size = Vector3(13, 1, 11)
+
+[sub_resource type="BoxShape3D" id="wall_collision"]
+size = Vector3(1, 1, 1)
+
+[node name="MoonGarden" type="Node3D"]
+
+[node name="Garden" type="Node3D" parent="."]
+
+[node name="Floor_0_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, -5)
+
+[node name="Wall_0_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, -5)
+
+[node name="Floor_0_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, -4)
+
+[node name="Wall_0_1" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, -4)
+
+[node name="Floor_0_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, -3)
+
+[node name="Wall_0_2" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, -3)
+
+[node name="Floor_0_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, -2)
+
+[node name="Wall_0_3" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, -2)
+
+[node name="Floor_0_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, -1)
+
+[node name="Wall_0_4" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, -1)
+
+[node name="Floor_0_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, 0)
+
+[node name="Wall_0_5" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, 0)
+
+[node name="Floor_0_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, 1)
+
+[node name="Wall_0_6" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, 1)
+
+[node name="Floor_0_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, 2)
+
+[node name="Wall_0_7" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, 2)
+
+[node name="Floor_0_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, 3)
+
+[node name="Wall_0_8" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, 3)
+
+[node name="Floor_0_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, 4)
+
+[node name="Wall_0_9" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, 4)
+
+[node name="Floor_0_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-6, 0, 5)
+
+[node name="Wall_0_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-6, 1, 5)
+
+[node name="Floor_1_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, -5)
+
+[node name="Wall_1_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-5, 1, -5)
+
+[node name="Floor_1_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, -4)
+
+[node name="Floor_1_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, -3)
+
+[node name="Floor_1_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, -2)
+
+[node name="Floor_1_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, -1)
+
+[node name="Floor_1_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, 0)
+
+[node name="Floor_1_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, 1)
+
+[node name="Floor_1_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, 2)
+
+[node name="Floor_1_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, 3)
+
+[node name="Floor_1_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, 4)
+
+[node name="Floor_1_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-5, 0, 5)
+
+[node name="Wall_1_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-5, 1, 5)
+
+[node name="Floor_2_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, -5)
+
+[node name="Wall_2_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-4, 1, -5)
+
+[node name="Floor_2_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, -4)
+
+[node name="Floor_2_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, -3)
+
+[node name="Floor_2_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, -2)
+
+[node name="Floor_2_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, -1)
+
+[node name="Floor_2_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, 0)
+
+[node name="Floor_2_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, 1)
+
+[node name="Floor_2_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, 2)
+
+[node name="Floor_2_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, 3)
+
+[node name="Floor_2_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, 4)
+
+[node name="Floor_2_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-4, 0, 5)
+
+[node name="Wall_2_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-4, 1, 5)
+
+[node name="Floor_3_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, -5)
+
+[node name="Wall_3_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-3, 1, -5)
+
+[node name="Floor_3_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, -4)
+
+[node name="Floor_3_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, -3)
+
+[node name="Floor_3_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, -2)
+
+[node name="Floor_3_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, -1)
+
+[node name="Floor_3_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, 0)
+
+[node name="Floor_3_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, 1)
+
+[node name="Floor_3_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, 2)
+
+[node name="Floor_3_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, 3)
+
+[node name="Floor_3_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, 4)
+
+[node name="Floor_3_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-3, 0, 5)
+
+[node name="Wall_3_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-3, 1, 5)
+
+[node name="Floor_4_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, -5)
+
+[node name="Wall_4_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-2, 1, -5)
+
+[node name="Floor_4_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, -4)
+
+[node name="Floor_4_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, -3)
+
+[node name="Floor_4_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, -2)
+
+[node name="Floor_4_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, -1)
+
+[node name="Floor_4_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, 0)
+
+[node name="Floor_4_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, 1)
+
+[node name="Floor_4_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, 2)
+
+[node name="Floor_4_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, 3)
+
+[node name="Floor_4_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, 4)
+
+[node name="Floor_4_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-2, 0, 5)
+
+[node name="Wall_4_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-2, 1, 5)
+
+[node name="Floor_5_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, -5)
+
+[node name="Wall_5_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-1, 1, -5)
+
+[node name="Floor_5_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, -4)
+
+[node name="Floor_5_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, -3)
+
+[node name="Floor_5_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, -2)
+
+[node name="Floor_5_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, -1)
+
+[node name="Floor_5_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, 0)
+
+[node name="Floor_5_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, 1)
+
+[node name="Floor_5_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, 2)
+
+[node name="Floor_5_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, 3)
+
+[node name="Floor_5_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, 4)
+
+[node name="Floor_5_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(-1, 0, 5)
+
+[node name="Wall_5_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-1, 1, 5)
+
+[node name="Floor_6_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, -5)
+
+[node name="Wall_6_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(0, 1, -5)
+
+[node name="Floor_6_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, -4)
+
+[node name="Floor_6_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, -3)
+
+[node name="Floor_6_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, -2)
+
+[node name="Floor_6_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, -1)
+
+[node name="Floor_6_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, 0)
+
+[node name="Floor_6_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, 1)
+
+[node name="Floor_6_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, 2)
+
+[node name="Floor_6_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, 3)
+
+[node name="Floor_6_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, 4)
+
+[node name="Floor_6_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(0, 0, 5)
+
+[node name="Wall_6_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(0, 1, 5)
+
+[node name="Floor_7_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, -5)
+
+[node name="Wall_7_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(1, 1, -5)
+
+[node name="Floor_7_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, -4)
+
+[node name="Floor_7_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, -3)
+
+[node name="Floor_7_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, -2)
+
+[node name="Floor_7_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, -1)
+
+[node name="Floor_7_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, 0)
+
+[node name="Floor_7_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, 1)
+
+[node name="Floor_7_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, 2)
+
+[node name="Floor_7_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, 3)
+
+[node name="Floor_7_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, 4)
+
+[node name="Floor_7_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(1, 0, 5)
+
+[node name="Wall_7_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(1, 1, 5)
+
+[node name="Floor_8_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, -5)
+
+[node name="Wall_8_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(2, 1, -5)
+
+[node name="Floor_8_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, -4)
+
+[node name="Floor_8_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, -3)
+
+[node name="Floor_8_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, -2)
+
+[node name="Floor_8_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, -1)
+
+[node name="Floor_8_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, 0)
+
+[node name="Floor_8_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, 1)
+
+[node name="Floor_8_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, 2)
+
+[node name="Floor_8_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, 3)
+
+[node name="Floor_8_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, 4)
+
+[node name="Floor_8_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(2, 0, 5)
+
+[node name="Wall_8_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(2, 1, 5)
+
+[node name="Floor_9_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, -5)
+
+[node name="Wall_9_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(3, 1, -5)
+
+[node name="Floor_9_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, -4)
+
+[node name="Floor_9_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, -3)
+
+[node name="Floor_9_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, -2)
+
+[node name="Floor_9_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, -1)
+
+[node name="Floor_9_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, 0)
+
+[node name="Floor_9_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, 1)
+
+[node name="Floor_9_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, 2)
+
+[node name="Floor_9_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, 3)
+
+[node name="Floor_9_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, 4)
+
+[node name="Floor_9_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(3, 0, 5)
+
+[node name="Wall_9_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(3, 1, 5)
+
+[node name="Floor_10_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, -5)
+
+[node name="Wall_10_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(4, 1, -5)
+
+[node name="Floor_10_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, -4)
+
+[node name="Floor_10_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, -3)
+
+[node name="Floor_10_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, -2)
+
+[node name="Floor_10_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, -1)
+
+[node name="Floor_10_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, 0)
+
+[node name="Floor_10_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, 1)
+
+[node name="Floor_10_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, 2)
+
+[node name="Floor_10_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, 3)
+
+[node name="Floor_10_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, 4)
+
+[node name="Floor_10_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(4, 0, 5)
+
+[node name="Wall_10_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(4, 1, 5)
+
+[node name="Floor_11_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, -5)
+
+[node name="Wall_11_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(5, 1, -5)
+
+[node name="Floor_11_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, -4)
+
+[node name="Floor_11_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, -3)
+
+[node name="Floor_11_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, -2)
+
+[node name="Floor_11_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, -1)
+
+[node name="Floor_11_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, 0)
+
+[node name="Floor_11_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, 1)
+
+[node name="Floor_11_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, 2)
+
+[node name="Floor_11_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, 3)
+
+[node name="Floor_11_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, 4)
+
+[node name="Floor_11_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(5, 0, 5)
+
+[node name="Wall_11_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(5, 1, 5)
+
+[node name="Floor_12_0" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, -5)
+
+[node name="Wall_12_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, -5)
+
+[node name="Floor_12_1" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, -4)
+
+[node name="Wall_12_1" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, -4)
+
+[node name="Floor_12_2" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, -3)
+
+[node name="Wall_12_2" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, -3)
+
+[node name="Floor_12_3" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, -2)
+
+[node name="Wall_12_3" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, -2)
+
+[node name="Floor_12_4" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, -1)
+
+[node name="Wall_12_4" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, -1)
+
+[node name="Floor_12_5" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, 0)
+
+[node name="Wall_12_5" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, 0)
+
+[node name="Floor_12_6" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, 1)
+
+[node name="Wall_12_6" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, 1)
+
+[node name="Floor_12_7" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, 2)
+
+[node name="Wall_12_7" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, 2)
+
+[node name="Floor_12_8" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, 3)
+
+[node name="Wall_12_8" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, 3)
+
+[node name="Floor_12_9" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, 4)
+
+[node name="Wall_12_9" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, 4)
+
+[node name="Floor_12_10" parent="Garden" instance=ExtResource("floor")]
+position = Vector3(6, 0, 5)
+
+[node name="Wall_12_10" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(6, 1, 5)
+
+[node name="Planter_-2_-1" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-2, 1, -1)
+
+[node name="Planter_-2_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-2, 1, 0)
+
+[node name="Planter_-2_1" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(-2, 1, 1)
+
+[node name="Planter_2_-1" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(2, 1, -1)
+
+[node name="Planter_2_0" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(2, 1, 0)
+
+[node name="Planter_2_1" parent="Garden" instance=ExtResource("wall")]
+position = Vector3(2, 1, 1)
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="StarCoin1" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(-4, 1, 3)
+
+[node name="StarCoin2" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(-4, 1, -3)
+
+[node name="StarCoin3" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(4, 1, 3)
+
+[node name="StarCoin4" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(4, 1, -3)
+
+[node name="StarCoin5" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(0, 1, -3)
+
+[node name="StarCoin6" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(-4, 1, 0)
+
+[node name="StarCoin7" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(4, 1, 0)
+
+[node name="StarCoin8" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(0, 1, 0)
+
+[node name="StarCoin9" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(-1, 1, 2)
+
+[node name="StarCoin10" parent="Coins" instance=ExtResource("coin")]
+position = Vector3(1, 1, -2)
+
+[node name="Character1" parent="." instance=ExtResource("player")]
+position = Vector3(0, 1, 3)
+
+[node name="GhostWest" parent="." instance=ExtResource("ghost")]
+position = Vector3(-4, 1, -1)
+
+[node name="GhostEast" parent="." instance=ExtResource("ghost")]
+position = Vector3(4, 1, 1)
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("env")]
+position = Vector3(0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 12, 12)
+projection = 1
+size = 13.2
+current = true
+
+[node name="Moonlight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -25, 0)
+light_color = Color(0.78, 0.88, 1, 1)
+light_energy = 0.9
+shadow_enabled = true
+
+[node name="Atmosphere" type="Node3D" parent="."]
+script = ExtResource("atmo")
+
+[node name="MoonLamp0" type="MeshInstance3D" parent="Garden"]
+position = Vector3(-5, 1.8, -4)
+mesh = SubResource("lamp_mesh")
+material_override = SubResource("lamp_mat")
+
+[node name="MoonLamp1" type="MeshInstance3D" parent="Garden"]
+position = Vector3(5, 1.8, -4)
+mesh = SubResource("lamp_mesh")
+material_override = SubResource("lamp_mat")
+
+[node name="MoonLamp2" type="MeshInstance3D" parent="Garden"]
+position = Vector3(-5, 1.8, 4)
+mesh = SubResource("lamp_mesh")
+material_override = SubResource("lamp_mat")
+
+[node name="MoonLamp3" type="MeshInstance3D" parent="Garden"]
+position = Vector3(5, 1.8, 4)
+mesh = SubResource("lamp_mesh")
+material_override = SubResource("lamp_mat")
+
+[node name="MoonLamp4" type="MeshInstance3D" parent="Garden"]
+position = Vector3(-2, 1.8, -1)
+mesh = SubResource("lamp_mesh")
+material_override = SubResource("lamp_mat")
+
+[node name="MoonLamp5" type="MeshInstance3D" parent="Garden"]
+position = Vector3(2, 1.8, 1)
+mesh = SubResource("lamp_mesh")
+material_override = SubResource("lamp_mat")
+
+[node name="FloorBody" type="StaticBody3D" parent="."]
+
+[node name="Shape" type="CollisionShape3D" parent="FloorBody"]
+shape = SubResource("floor_collision")
+
+[node name="WallBody_0_0" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_1" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, -4)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_1"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_2" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, -3)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_2"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_3" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, -2)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_3"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_4" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, -1)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_4"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_5" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_5"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_6" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, 1)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_6"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_7" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, 2)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_7"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_8" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, 3)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_8"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_9" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, 4)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_9"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_0_10" type="StaticBody3D" parent="."]
+position = Vector3(-6, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_0_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_1_0" type="StaticBody3D" parent="."]
+position = Vector3(-5, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_1_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_1_10" type="StaticBody3D" parent="."]
+position = Vector3(-5, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_1_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_2_0" type="StaticBody3D" parent="."]
+position = Vector3(-4, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_2_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_2_10" type="StaticBody3D" parent="."]
+position = Vector3(-4, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_2_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_3_0" type="StaticBody3D" parent="."]
+position = Vector3(-3, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_3_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_3_10" type="StaticBody3D" parent="."]
+position = Vector3(-3, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_3_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_4_0" type="StaticBody3D" parent="."]
+position = Vector3(-2, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_4_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_4_10" type="StaticBody3D" parent="."]
+position = Vector3(-2, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_4_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_5_0" type="StaticBody3D" parent="."]
+position = Vector3(-1, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_5_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_5_10" type="StaticBody3D" parent="."]
+position = Vector3(-1, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_5_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_6_0" type="StaticBody3D" parent="."]
+position = Vector3(0, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_6_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_6_10" type="StaticBody3D" parent="."]
+position = Vector3(0, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_6_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_7_0" type="StaticBody3D" parent="."]
+position = Vector3(1, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_7_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_7_10" type="StaticBody3D" parent="."]
+position = Vector3(1, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_7_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_8_0" type="StaticBody3D" parent="."]
+position = Vector3(2, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_8_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_8_10" type="StaticBody3D" parent="."]
+position = Vector3(2, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_8_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_9_0" type="StaticBody3D" parent="."]
+position = Vector3(3, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_9_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_9_10" type="StaticBody3D" parent="."]
+position = Vector3(3, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_9_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_10_0" type="StaticBody3D" parent="."]
+position = Vector3(4, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_10_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_10_10" type="StaticBody3D" parent="."]
+position = Vector3(4, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_10_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_11_0" type="StaticBody3D" parent="."]
+position = Vector3(5, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_11_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_11_10" type="StaticBody3D" parent="."]
+position = Vector3(5, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_11_10"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_0" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, -5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_0"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_1" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, -4)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_1"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_2" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, -3)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_2"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_3" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, -2)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_3"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_4" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, -1)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_4"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_5" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_5"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_6" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, 1)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_6"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_7" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, 2)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_7"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_8" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, 3)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_8"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_9" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, 4)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_9"]
+shape = SubResource("wall_collision")
+
+[node name="WallBody_12_10" type="StaticBody3D" parent="."]
+position = Vector3(6, 1, 5)
+
+[node name="Shape" type="CollisionShape3D" parent="WallBody_12_10"]
+shape = SubResource("wall_collision")
+
+[node name="PlanterBody_0_0" type="StaticBody3D" parent="."]
+position = Vector3(-2, 1, -1)
+
+[node name="Shape" type="CollisionShape3D" parent="PlanterBody_0_0"]
+shape = SubResource("wall_collision")
+
+[node name="PlanterBody_0_1" type="StaticBody3D" parent="."]
+position = Vector3(-2, 1, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="PlanterBody_0_1"]
+shape = SubResource("wall_collision")
+
+[node name="PlanterBody_0_2" type="StaticBody3D" parent="."]
+position = Vector3(-2, 1, 1)
+
+[node name="Shape" type="CollisionShape3D" parent="PlanterBody_0_2"]
+shape = SubResource("wall_collision")
+
+[node name="PlanterBody_4_0" type="StaticBody3D" parent="."]
+position = Vector3(2, 1, -1)
+
+[node name="Shape" type="CollisionShape3D" parent="PlanterBody_4_0"]
+shape = SubResource("wall_collision")
+
+[node name="PlanterBody_4_1" type="StaticBody3D" parent="."]
+position = Vector3(2, 1, 0)
+
+[node name="Shape" type="CollisionShape3D" parent="PlanterBody_4_1"]
+shape = SubResource("wall_collision")
+
+[node name="PlanterBody_4_2" type="StaticBody3D" parent="."]
+position = Vector3(2, 1, 1)
+
+[node name="Shape" type="CollisionShape3D" parent="PlanterBody_4_2"]
+shape = SubResource("wall_collision")

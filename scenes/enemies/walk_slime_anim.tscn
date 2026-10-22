@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmd5urti5o6xb"]
 
 [ext_resource type="PackedScene" uid="uid://dv8kiav6hfimt" path="res://assets/models/RPG Monster DUO PBR Polyart/Animations/Slime/Walk_Slime_Anim.fbx" id="1_l6nh8"]
-[ext_resource type="Texture2D" uid="uid://elmtbjdmnws2" path="res://assets/models/RPG Monster DUO PBR Polyart/Textures/Emission.png" id="2_be373"]
-[ext_resource type="Texture2D" uid="uid://cxh8sdbql1sjy" path="res://assets/models/RPG Monster DUO PBR Polyart/Textures/Metallic-Smoothness.png" id="3_pnxun"]
+[ext_resource type="Texture2D" uid="uid://elmtbjdmnws2" path="res://assets/models/RPG Monster DUO PBR Polyart/textures/Emission.png" id="2_be373"]
+[ext_resource type="Texture2D" uid="uid://cxh8sdbql1sjy" path="res://assets/models/RPG Monster DUO PBR Polyart/textures/Metallic-Smoothness.png" id="3_pnxun"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0u7u"]
 albedo_color = Color(0.91, 0.32638666, 0.2366, 1)

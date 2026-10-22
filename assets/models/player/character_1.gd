@@ -14,6 +14,7 @@ var SNAP_SPEED: float = 20.0
 var GRID_SIZE: float = 1.0
 const JUMP_VELOCITY = 4.5
 var can_move: bool = true
+var shot_cooldown := 0.0
 
 func _ready():
 	await get_tree().create_timer(0.1).timeout
@@ -22,10 +23,8 @@ func _ready():
 	for enemy in enemies:
 		if enemy.has_signal("player_caught"):
 			enemy.player_caught.connect(_on_player_caught)
-			print(" connect to enemy")
 
 func _on_player_caught():
-	print("Player caught!!")
 	can_move = false
 	velocity = Vector3.ZERO
 
@@ -86,7 +85,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()	
 	
 func shoot_bubble():
-	if bubble_scene_path == null:
+	if bubble_scene_path.is_empty():
 		print("Error: bubble scene isn't set!")
 		return
 		
@@ -103,7 +102,7 @@ func shoot_bubble():
 	var spawn_pos = Vector3(target_x, traget_y, target_z)
 
 		
-	new_bubble.global_position = spawn_pos
+	new_bubble.position = spawn_pos
 	
 	var shoot_dir = global_transform.basis.z
 	new_bubble.direction = shoot_dir.normalized()
@@ -111,7 +110,9 @@ func shoot_bubble():
 	get_tree().current_scene.add_child(new_bubble)
 	
 func _process(delta):
-	if Input.is_action_just_pressed("shoot"):
+	shot_cooldown = maxf(0.0, shot_cooldown - delta)
+	if can_move and Global.run_active and shot_cooldown <= 0.0 and Input.is_action_just_pressed("shoot"):
+		shot_cooldown = 0.22
 		shoot_bubble()
 	
 	

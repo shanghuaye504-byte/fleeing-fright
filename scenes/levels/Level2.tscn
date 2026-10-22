@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csch8m0ukrq4l"]
+[gd_scene load_steps=20 format=3 uid="uid://csch8m0ukrq4l"]
 
 [ext_resource type="Script" uid="uid://c06011rarcw4n" path="res://scenes/levels/level_2.gd" id="1_twycr"]
 [ext_resource type="PackedScene" uid="uid://ch0b72xqdc7s4" path="res://scenes/enemies/ghost.tscn" id="2_inlfm"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://nlaicg3ptivi" path="res://scenes/collectable/StarCoin.tscn" id="6_dwyyt"]
 [ext_resource type="PackedScene" uid="uid://cpterd6m1wbtg" path="res://assets/models/player/character1.tscn" id="7_a6cvn"]
 [ext_resource type="PackedScene" uid="uid://c7ikk2ebdi060" path="res://scenes/enemies/Shark.tscn" id="8_inlfm"]
+
+[ext_resource type="Script" path="res://presentation/effects/LevelAtmosphere.gd" id="90_atmosphere"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nos0u"]
 transparency = 1
@@ -1677,3 +1679,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, -2)
 
 [node name="Shark" parent="." instance=ExtResource("8_inlfm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Atmosphere" type="Node3D" parent="."]
+script = ExtResource("90_atmosphere")

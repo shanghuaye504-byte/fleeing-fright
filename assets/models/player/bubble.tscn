@@ -4,7 +4,10 @@
 [ext_resource type="AudioStream" uid="uid://4alj43dl3dxr" path="res://assets/audio/sfx/kenney_sci-fi-sounds/Audio/laserSmall_002.ogg" id="2_l41y5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pi8v"]
-albedo_color = Color(0.94, 0.50759995, 0.58687335, 1)
+albedo_color = Color(0.42, 0.94, 0.84, 1)
+emission_enabled = true
+emission = Color(0.2, 0.65, 0.5, 1)
+emission_energy_multiplier = 0.65
 roughness = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_tsvjv"]

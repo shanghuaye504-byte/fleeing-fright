@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdipbmmyruqkx"]
+[gd_scene load_steps=12 format=3 uid="uid://cdipbmmyruqkx"]
 
 [ext_resource type="PackedScene" uid="uid://cabyka04v46iv" path="res://assets/models/WorldBlocks/GrassGround.tscn" id="1_s2q83"]
 [ext_resource type="PackedScene" uid="uid://cpterd6m1wbtg" path="res://assets/models/player/character1.tscn" id="2_kiuiw"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c161xyw6tmost" path="res://scenes/environments/world_environment_basic.tscn" id="6_0vljy"]
 [ext_resource type="PackedScene" uid="uid://ch0b72xqdc7s4" path="res://scenes/enemies/ghost.tscn" id="7_78yd5"]
 [ext_resource type="PackedScene" uid="uid://nlaicg3ptivi" path="res://scenes/collectable/StarCoin.tscn" id="7_lx3d7"]
+
+[ext_resource type="Script" path="res://presentation/effects/LevelAtmosphere.gd" id="90_atmosphere"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gckav"]
 size = Vector3(13, 1, 11)
@@ -665,3 +667,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.719198, 1, 1.8044765)
 
 [node name="ghost2" parent="enemies" instance=ExtResource("7_78yd5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9665403, 1, -2.891682)
+
+[node name="Atmosphere" type="Node3D" parent="."]
+script = ExtResource("90_atmosphere")
