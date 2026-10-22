@@ -68,3 +68,12 @@
 - Kept all original assets, including a 51.14 MiB FBX; GitHub accepts it with a size recommendation warning.
 - Canonicalized the companion Unity folder metadata filename materials.meta with its asset directory.
   This does not change Godot runtime resources or the already verified PCK.
+
+## 2026-10-23 — release completed
+
+- Published https://github.com/shanghuaye504-byte/fleeing-fright/releases/tag/v0.1.0.
+- Independent GitHub API read confirms draft=false, prerelease=false, and both assets uploaded.
+- Server PCK size: 44,644,780 bytes; server digest matches local:
+  28b5644a0bc8f3959f55655e01375a082512ef19cf5fd25f745a028b87ee3a3c.
+- Local copies are in ignored build/FleeingFright.pck and build/SHA256SUMS.txt.
+- Release tag points to the validated code; this final record is a documentation-only follow-up.
